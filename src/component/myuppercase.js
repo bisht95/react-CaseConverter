@@ -18,6 +18,11 @@ export default function MyUppercase(props) {
         setText(newtext)
     }
 
+    const handelClearallbtn = () => {
+        let newtext = ''
+        setText(newtext)
+    }
+
 
 
   return (
@@ -30,7 +35,8 @@ export default function MyUppercase(props) {
             </div>
 
             <button type='button' className='btn btn-success me-2' onClick={handeluppercasebtn}>Click to Uppercase</button>
-            <button type='button' className='btn btn-success' onClick={handellowercasebtn}>Click to LowerCase</button>
+            <button type='button' className='btn btn-primary me-2' onClick={handellowercasebtn}>Click to LowerCase</button>
+            <button type='button' className='btn btn-warning' onClick={handelClearallbtn}>Click to Clear All</button>
         </div>
     </div>
   )
