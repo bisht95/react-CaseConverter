@@ -1,9 +1,9 @@
 //import logo from './logo.svg';
 import './App.css';
 import Mainbanner from './component/mainbanner';
-import MyUppercase from './component/myuppercase';
+//  import MyUppercase from './component/myuppercase';
 import Navbar from './component/navbar';
-// import TextForm from './component/textform';
+import TextForm from './component/textform';
 
 
 
@@ -12,8 +12,8 @@ function App() {
     <div>
       <Navbar/>
       <Mainbanner name="Sara" subheading="This is Subheading"/>
-      {/* <TextForm  textform_heading="Enter the text to analyze below"/> */}
-      <MyUppercase uppercaseheading="This Uppercase com"/>
+      <TextForm textarea_lable="This is Text Case Converter"/>
+      {/* <MyUppercase uppercaseheading="This Uppercase com"/> */}
     </div>
   );
 }

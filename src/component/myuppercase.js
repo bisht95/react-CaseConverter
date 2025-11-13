@@ -18,6 +18,14 @@ export default function MyUppercase(props) {
         setText(newtext)
     }
 
+    const handelcapitalizewod = (str) =>{
+        return str.replace(/\b\w/g, char => char.toUpperCase());
+    }
+
+    const handelcapitalizebtn = () =>{
+       setText(handelcapitalizewod(text))
+    }
+
     const handelClearallbtn = () => {
         let newtext = ''
         setText(newtext)
@@ -35,6 +43,7 @@ export default function MyUppercase(props) {
             </div>
 
             <button type='button' className='btn btn-success me-2' onClick={handeluppercasebtn}>Click to Uppercase</button>
+            <button type='button' className='btn btn-info me-2' onClick={handelcapitalizebtn}>Click to Capitalize</button>
             <button type='button' className='btn btn-primary me-2' onClick={handellowercasebtn}>Click to LowerCase</button>
             <button type='button' className='btn btn-warning' onClick={handelClearallbtn}>Click to Clear All</button>
         </div>
