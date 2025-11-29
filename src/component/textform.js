@@ -33,8 +33,7 @@ export default function TextForm(props) {
     }
 
   return (
-    <div className='container'>
-
+    <div className='container' style={{color: props.mode==='dark'?'white':'#000'}}>
         <p>{props.textarea_lable}</p>
 
         <div className='textaeresec mb-4'>

@@ -4,7 +4,9 @@ function Mainbanner(props) {
 
     return(
 
-        <div className='main-banner mt-4'>
+        <div className='main-banner mt-4' style={{color: props.mode==='dark'?'white':'#000'}}>
+
+
             <div className='container'>
                 <h1>Main Banner {props.name}</h1>
                 <p>{props.subheading}</p> 

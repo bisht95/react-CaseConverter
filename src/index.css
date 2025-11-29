@@ -11,3 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.navbar-brand{
+   font-family: "Josefin Sans", sans-serif;
+    color: #964efc;
+    font-weight: 700;
+}
