@@ -33,7 +33,7 @@ export default function TextForm(props) {
     }
 
   return (
-    <div className='container' style={{color: props.mode==='dark'?'white':'#000'}}>
+    <div className='container mt-5' style={{color: props.mode==='dark'?'white':'#000'}}>
         <p>{props.textarea_lable}</p>
 
         <div className='textaeresec mb-4'>
@@ -44,6 +44,11 @@ export default function TextForm(props) {
         <button type='button' className='btn btn-info me-2' onClick={handelcapitalizebtn}>Click to Capitalize</button>
         <button type='button' className='btn btn-primary me-2' onClick={handellowercasebtn}>Click to LowerCase</button>
         <button type='button' className='btn btn-warning' onClick={handelClearallbtn}>Click to Clear All</button>
+
+        <div className='mt-3'>
+            <p>{text.split(/\s+/).filter((element)=>{return element.length!==0}).length} words and {text.replace(/\s+/g, '').length} characters</p>
+        </div>
+    
     </div>
   )
 }

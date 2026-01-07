@@ -1,37 +1,29 @@
-import React, {useState} from 'react'
-
+import React, {useState} from 'react';
+import Footer from './footer';
 export default function About(props) {
-
-    const [myStyle, setMyStyle] = useState({backgroundColor: 'black', color: 'white', padding: '20px', marginTop: '25px', borderRadius: '15px'})
-
-    const [btntext, setBtnText]= useState('Active Light Mode')
-    const [btnStyle, setBtnStyle] = useState({backgroundColor: 'black', color: 'white'})
-    
-    const toggleStyle = () => {
-        if(myStyle.color === 'white'){
-            setMyStyle({color: '#fff', backgroundColor: '#666', padding: '20px', marginTop: '25px', borderRadius: '15px'})
-            setBtnText('Active Dark Mode')
-            setBtnStyle({backgroundColor: '#666', color: '#fff'})
-        }
-
-        else{
-            setMyStyle({color: 'white', backgroundColor: '#000', padding: '20px', marginTop: '25px', borderRadius: '15px'})
-            setBtnText('Active Light Mode')
-             setBtnStyle({backgroundColor: '#000', color: '#fff'})
-        }
-    }
 
 
   return (
-    <div className='container mt-5'>
-        <h3>{props.theme_title}</h3>
-        <div className='themebox' style={myStyle}>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-           
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-        </div>
 
-        <button type='button' className='btn btn-success me-2 mt-3' onClick={toggleStyle} style={btnStyle}>{btntext}</button>
+    <div>
+    <div className='container mt-5' style={{color: props.mode==='dark'?'white':'#000'}}>
+        <h3>{props.theme_title}</h3>
+        <div className='themebox'>
+            <p>Convert Case is a versatile, free online tool designed to boost productivity by streamlining text formatting. Whether you need to fix a "Caps Lock" mistake or ensure a title follows proper capitalization rules, the platform provides instant corrections and various stylistic outputs</p>
+           
+            <p>Beyond simple formatting, the site offers:</p>
+
+            <ul>
+                <li><strong>Functional Conversions: </strong> Easily translate standard text into specialized formats like binary or Morse code.</li>
+                <li><strong>Creative Flair:</strong> Utilize unique text manipulators to make social media posts or advertisements more eye-catching.</li>
+                <li><strong>Error Correction:</strong> Quickly remedy accidental typing errors to save time on manual editing.</li>
+            </ul>
+
+            <p>Ultimately, it serves as an all-in-one solution for anyone looking to refine, transform, or stylize their written content for professional or personal use.</p>
+        </div>
+    </div>
+
+     <Footer />
 
     </div>
   )

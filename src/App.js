@@ -1,13 +1,19 @@
 //import logo from './logo.svg';
 import './App.css';
 
-//import About from './component/About';
+import About from './component/About';
 import Mainbanner from './component/mainbanner';
 import Alert from './component/Alert';
 // import MyUppercase from './component/myuppercase';
 import Navbar from './component/navbar';
 import TextForm from './component/textform';
+
 import React, {useState} from 'react';
+import {BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 
 
@@ -50,13 +56,27 @@ function App() {
 
   return (
     <div>
-      <Navbar toggleMode={toggleMode} mode={mode} toggleText={toggleText} />
-      <Alert alert={alert}/>
-      <Mainbanner name="Test" subheading="This is Subheading" mode={mode}/>
-      <TextForm textarea_lable="This is Text Case Converter" mode={mode}/>
+      <Router>
+        <Navbar toggleMode={toggleMode} mode={mode} toggleText={toggleText} />
+        <Alert alert={alert}/>
+        {/* <Mainbanner name="Test" subheading="This is Subheading" mode={mode}/> */}
+        <Switch>
+            <Route exact path="/">
+              <TextForm textarea_lable="This is Text Case Converter" mode={mode}/>
+            </Route>
+          
+          <Route exact path="/about">
+            { <About theme_title='About Us'  mode={mode}/>}
+          </Route>
 
-      {/* <MyUppercase uppercaseheading="This Uppercase com"/> */}
-      {/* <About theme_title='Theme Mode'/> */}
+              {/* <MyUppercase uppercaseheading="This Uppercase com"/> */}
+
+        </Switch>
+
+        
+      </Router>
+
+      
     </div>
   );
 }

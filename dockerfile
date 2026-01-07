@@ -1,5 +1,3 @@
-#FROM node:18-slim AS build
-
 FROM node:20.19.6-alpine3.21 AS build
 
 ENV NODE_OPTIONS=--openssl-legacy-provider
@@ -19,9 +17,21 @@ RUN npm run build
 
 FROM nginx:mainline-alpine-slim
 
+RUN chown -R nginx:nginx /var/cache/nginx && \
+    chown -R nginx:nginx /var/log/nginx 
+     
+RUN touch /var/run/nginx.pid && \ 
+    chown -R nginx:nginx /var/run/nginx.pid 
+USER nginx 
+
 
 EXPOSE 80
 
 COPY --from=build /app/build /usr/share/nginx/html
 
 CMD ["nginx", "-g", "daemon off;"]
+
+
+########### Command to run ###########
+#export DOCKER_BUILDKIT=1 
+#docker build -t ds .
