@@ -9,7 +9,7 @@ import Navbar from './component/navbar';
 import TextForm from './component/textform';
 
 import React, {useState} from 'react';
-import {BrowserRouter as Router,
+import {HashRouter as Router,
   Switch,
   Route,
   //Link
