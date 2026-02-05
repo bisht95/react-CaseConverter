@@ -25,9 +25,11 @@ RUN touch /var/run/nginx.pid && \
 USER nginx 
 
 
-EXPOSE 80
+EXPOSE 8080
 
 COPY --from=build /app/build /usr/share/nginx/html
+
+COPY default.conf /etc/nginx/conf.d/default.conf
 
 CMD ["nginx", "-g", "daemon off;"]
 
