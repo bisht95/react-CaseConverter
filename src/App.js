@@ -2,7 +2,7 @@
 import './App.css';
 
 import About from './component/About';
-import Mainbanner from './component/mainbanner';
+//import Mainbanner from './component/mainbanner';
 import Alert from './component/Alert';
 // import MyUppercase from './component/myuppercase';
 import Navbar from './component/navbar';
@@ -12,7 +12,7 @@ import React, {useState} from 'react';
 import {BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  //Link
 } from "react-router-dom";
 
 
