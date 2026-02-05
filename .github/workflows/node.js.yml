@@ -33,10 +33,10 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Upload dist folder
+      - name: Upload build folder
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: build
 
   deploy:
     needs: build
