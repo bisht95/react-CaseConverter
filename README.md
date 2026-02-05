@@ -1,3 +1,7 @@
+####################### gitub action deployment URL #########################
+
+https://bisht95.github.io/react-CaseConverter/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -74,6 +78,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 docker login -u USER_NAME
 docker build -t johndoe/nginx-app:latest .
 docker push johndoe/nginx-app:latest
+
+
 
 
 
